@@ -13,7 +13,7 @@ class Myapp extends StatelessWidget {
       title: "App demo",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Kidor",),
+          //title: const Text("Kidor",),
           
           centerTitle: true,
           leading: Image.asset("assets/idk.jpg", height: 300,width: 200),
