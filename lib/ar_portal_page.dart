@@ -18,9 +18,10 @@ class ArPortalPage extends StatelessWidget{
       
         body: Center(
   child: Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.only(bottom: 20),
     child: Column(
       children: [
+        
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -38,13 +39,21 @@ class ArPortalPage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'AR | Portal',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                    padding: EdgeInsets.only(bottom: 15),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Row(
+                        children: [
+                          Text(
+                            'AR | Portal',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                         
+                        ],
                       ),
                     ),
                   ),
@@ -76,6 +85,8 @@ class ArPortalPage extends StatelessWidget{
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
+            
+            
            
             child: Column(
               children: [
@@ -193,6 +204,7 @@ class ArPortalPage extends StatelessWidget{
                         ],
                       ),
                     )
+                    
                   ),
                 ),
               ],
@@ -201,9 +213,25 @@ class ArPortalPage extends StatelessWidget{
             
           ),
           
+          
+        ),
+        Padding(
+          padding: const EdgeInsets.all(1.0),
+          child: Container(
+            width: 250,
+            height: 70,                
+            decoration: ShapeDecoration(
+              color:Colors.black.withOpacity(0.5),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(100),
+              ),
+            ),
+          ),
         ),
       ],
+      
     ),
+    
   ),
 ),
 
