@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ArPortalPage extends StatelessWidget{
@@ -94,10 +95,10 @@ class ArPortalPage extends StatelessWidget{
                   padding: const EdgeInsets.all(20.0),
                   child: Center(
                     child: Container(
-                      width: 250,
+                      width: 277,
                       height: 130,                
                       decoration: ShapeDecoration(
-                        color:Colors.black.withOpacity(0.5),
+                        color:Colors.white.withOpacity(0.6),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -129,7 +130,7 @@ class ArPortalPage extends StatelessWidget{
                             padding: EdgeInsets.all(8.0),
                             child: Center(
                               child: SizedBox(
-                                width: 137,
+                                width: 150,
                                 height: 100,
                                 child: Column(
                                   children: [
@@ -144,14 +145,14 @@ class ArPortalPage extends StatelessWidget{
                                                 Center(
                                                   child: Text('Rainforest',
                                                   style: TextStyle(
-                                                    color: Colors.white
+                                                    color: Colors.black
                                                     
                                                   ),),
                                                   
                                                 ),
                                                 Icon(
                                                   Icons.location_on, // Replace with the desired icon
-                                                  color: Colors.white, // Set the desired icon color
+                                                  color: Colors.black, // Set the desired icon color
                                                   size: 24, // Set the desired icon size
                                                 ),
                                                 
@@ -160,31 +161,43 @@ class ArPortalPage extends StatelessWidget{
                                           ),
                                           Row(
                                             children: [
-                                              Center(
-                                                child: Text('2KM',
-                                                style: TextStyle(
-                                                  color: Colors.white
+                                              Padding(
+                                                padding: EdgeInsets.only(top: 5),
+                                                child: Center(
+                                                  child: Text('2KM',
+                                                  style: TextStyle(
+                                                    color: Colors.black
+                                                    
+                                                  ),),
                                                   
-                                                ),),
-                                                
+                                                ),
                                               ),
-                                              Icon(
-                                                Icons.local_taxi_outlined, // Replace with the desired icon
-                                                color: Colors.white, // Set the desired icon color
-                                                size: 24, // Set the desired icon size
+                                              Padding(
+                                                padding: EdgeInsets.only(top: 5),
+                                                child: Icon(
+                                                  Icons.local_taxi_outlined, // Replace with the desired icon
+                                                  color: Colors.black, // Set the desired icon color
+                                                  size: 24, // Set the desired icon size
+                                                ),
                                               ),
-                                              Center(
-                                                child: Text('5pm',
-                                                style: TextStyle(
-                                                  color: Colors.white
+                                              Padding(
+                                                padding: EdgeInsets.only(left: 24,top: 5),
+                                                child: Center(
+                                                  child: Text('5pm',
+                                                  style: TextStyle(
+                                                    color: Colors.black
+                                                    
+                                                  ),),
                                                   
-                                                ),),
-                                                
+                                                ),
                                               ),
-                                              Icon(
-                                                Icons.timer_outlined, // Replace with the desired icon
-                                                color: Colors.white, // Set the desired icon color
-                                                size: 24, // Set the desired icon size
+                                              Padding(
+                                                padding: EdgeInsets.only(top: 5),
+                                                child: Icon(
+                                                  Icons.timer_outlined, // Replace with the desired icon
+                                                  color: Colors.black, // Set the desired icon color
+                                                  size: 24, // Set the desired icon size
+                                                ),
                                               ),
                                               
                                             ],
@@ -217,17 +230,55 @@ class ArPortalPage extends StatelessWidget{
         ),
         Padding(
           padding: const EdgeInsets.all(1.0),
-          child: Container(
-            width: 250,
-            height: 70,                
-            decoration: ShapeDecoration(
-              color:Colors.black.withOpacity(0.5),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+          child: TextButton(
+            onPressed: () {
+              // Add your onPressed function here
+            },
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                EdgeInsets.zero,
+              ),
+              backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.transparent,
+              ),
+              shape: MaterialStateProperty.all<OutlinedBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
+            ),
+            child: Container(
+              width: 250,
+              height: 70,
+              decoration: ShapeDecoration(
+                color: Colors.black.withOpacity(0.5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.explore,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                  SizedBox(width: 8), // Adjust the space between icon and text
+                  Text(
+                    'Explore',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
         ),
+
+
       ],
       
     ),
