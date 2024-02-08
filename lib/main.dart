@@ -12,7 +12,7 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: "App demo",
+      title: "App bar",
       home: UserProfile()
     );
   }
