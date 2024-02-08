@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ArPortalPage extends StatelessWidget{
@@ -34,31 +33,51 @@ class ArPortalPage extends StatelessWidget{
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
+            child:  Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 15),
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Row(
-                        children: [
-                          Text(
-                            'AR | Portal',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
+                    padding: const EdgeInsets.only(bottom: 4),
+                    // ignore: avoid_unnecessary_containers
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 11),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(1),
+                              child: const Text(
+                                'AR | Portal',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                          ),
-                         
-                        ],
+                            const SizedBox(width: 170), // Spacer between the two containers
+                            Container(
+                              width: 50, 
+                              height: 50, 
+                               decoration: ShapeDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage("assets/idk.jpg"),
+                                  fit: BoxFit.fill,
+                                  ),
+                                
+                                  shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Unlock the wonders of education through the magic of Portal experience",
                     style: TextStyle(
                       fontSize: 15,
