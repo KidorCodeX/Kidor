@@ -19,3 +19,21 @@ class _SignupState extends State<Signup> {
   final TextEditingController lastNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>(); // Add form key
 
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  void signUpUser(BuildContext scaffoldContext) async {
+  FirebaseAuthMethods authMethods = FirebaseAuthMethods(FirebaseAuth.instance);
+  await authMethods.signUpWithEmail(
+    email: emailController.text,
+    password: passwordController.text,
+    context: scaffoldContext,
+  );
+
+ 
+ 
+}
