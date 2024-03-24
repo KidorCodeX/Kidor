@@ -27,6 +27,8 @@ class _SignupState extends State<Signup> {
     passwordController.dispose();
   }
 
+
+  // Method to sign up user using provided email and password
   void signUpUser(BuildContext scaffoldContext) async {
   FirebaseAuthMethods authMethods = FirebaseAuthMethods(FirebaseAuth.instance);
   await authMethods.signUpWithEmail(
