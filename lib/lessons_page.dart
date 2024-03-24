@@ -14,7 +14,7 @@ class LessonsPage extends StatelessWidget {
     home: Scaffold(
       appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -22,6 +22,7 @@ class LessonsPage extends StatelessWidget {
           actions: [
             Container(
               width: 100,
+              decoration: ShapeDecoration(
                 image: const DecorationImage(
                   image: AssetImage("assets/logo.jpg"),
                   fit: BoxFit.fill,
@@ -33,7 +34,6 @@ class LessonsPage extends StatelessWidget {
             ),
           ],
         ),
-
 
       body: SingleChildScrollView( 
         child: Center(
@@ -152,8 +152,8 @@ class LessonsPage extends StatelessWidget {
                           ],
                         ),
                         Icon(
-                          Icons.filter_list_outlined,                  
-                         color: Colors.black,
+                          Icons.filter_list_outlined,
+                          color: Colors.black,
                           size: 35,
                         ),
                       ],
@@ -169,7 +169,7 @@ class LessonsPage extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 17),
+                    padding: const EdgeInsets.only(left: 14),
                     child: Row(
                       children: [
                         Container(
@@ -186,7 +186,7 @@ class LessonsPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const SciencePage()),
+                                  MaterialPageRoute(builder: (context) => SciencePage()),
                                 );
                             },
                             shape: const RoundedRectangleBorder(
@@ -197,7 +197,7 @@ class LessonsPage extends StatelessWidget {
                     
                         ),
                        Padding(
-                         padding: const EdgeInsets.only(left: 30),
+                         padding: const EdgeInsets.only(left: 24),
                          child: Container(
                             width: 163,
                             height: 155,
@@ -212,7 +212,7 @@ class LessonsPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const BiologyPage()),
+                                  MaterialPageRoute(builder: (context) => BiologyPage()),
                                 );
                               },
                               shape: const RoundedRectangleBorder(
@@ -235,7 +235,7 @@ class LessonsPage extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 17),
+                    padding: const EdgeInsets.only(left: 14),
                     child: Row(
                       children: [
                         Container(
@@ -260,7 +260,7 @@ class LessonsPage extends StatelessWidget {
                     
                         ),
                        Padding(
-                         padding: const EdgeInsets.only(left: 30),
+                         padding: const EdgeInsets.only(left: 24),
                          child: Container(
                             width: 163,
                             height: 155,
@@ -295,7 +295,7 @@ class LessonsPage extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 17),
+                    padding: const EdgeInsets.only(left: 14),
                     child: Row(
                       children: [
                         Container(
@@ -312,7 +312,7 @@ class LessonsPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const MathsPage()),
+                                  MaterialPageRoute(builder: (context) => MathsPage()),
                                 );
                             },
                             shape: const RoundedRectangleBorder(
@@ -323,7 +323,7 @@ class LessonsPage extends StatelessWidget {
                     
                         ),
                        Padding(
-                         padding: const EdgeInsets.only(left: 30),
+                         padding: const EdgeInsets.only(left: 24),
                          child: Container(
                             width: 163,
                             height: 155,
@@ -338,7 +338,7 @@ class LessonsPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const Astronomy()),
+                                  MaterialPageRoute(builder: (context) => Astronomy()),
                                 );
                               },
                               shape: const RoundedRectangleBorder(
