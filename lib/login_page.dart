@@ -98,3 +98,23 @@ class _LoginState extends State<Login> {
             child: Column(
               children: [
                 const Padding(  
+                                   padding: EdgeInsets.only(top: 170),
+                  child: SizedBox(
+                    width: 346,
+                    height: 56,
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 1),
+                        child: Text(
+                          "Welcome Back!",
+                          style: TextStyle(
+                            fontSize: 29,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
