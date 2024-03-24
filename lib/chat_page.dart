@@ -12,3 +12,28 @@ class ChatPage extends StatefulWidget {
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
+
+class _ChatPageState extends State<ChatPage> {
+  final _openAI = OpenAI.instance.build(
+    token: OPENAI_API,
+    baseOption: HttpSetup(
+      receiveTimeout: const Duration(seconds: 5),
+    ),
+    enableLog: true,
+  );
+
+  final ChatUser _currentUser = ChatUser(
+    id: '1',
+    firstName: 'd',
+    lastName: 'd',
+  );
+
+  final ChatUser _gptChatUser = ChatUser(
+    id: '2',
+    firstName: 'Kidor',
+    lastName: '-Ai',
+  );
+
+  List<ChatMessage> _messages = <ChatMessage>[];
+  String messageText = "";
+  List<ChatUser> _typingUsers = <ChatUser>[];
