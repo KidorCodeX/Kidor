@@ -171,3 +171,83 @@ class _QuizpageState extends State<Quizpage> {
 
 
 
+class DomainQuizPage extends StatefulWidget {
+  final List<Map<String, dynamic>> quizzes;
+
+  const DomainQuizPage({Key? key, required this.quizzes}) : super(key: key);
+
+  @override
+  _DomainQuizPageState createState() => _DomainQuizPageState();
+}
+
+class _DomainQuizPageState extends State<DomainQuizPage> {
+  Map<int, String> _selectedAnswers = {};
+  Map<int, bool> _isAnswerCorrect = {};
+
+  void _checkAnswer(int index, String? selectedOption) {
+    setState(() {
+      _selectedAnswers[index] = selectedOption ?? '';
+      _isAnswerCorrect[index] =
+          widget.quizzes[index]['answer'] == selectedOption;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quiz Page'),
+      ),
+      body: ListView.builder(
+        itemCount: widget.quizzes.length,
+        itemBuilder: (context, index) {
+          final currentQuestion = widget.quizzes[index];
+          final questionText = currentQuestion['question'] as String;
+          final options = (currentQuestion['options'] as String).split(', ');
+          final correctAnswer = currentQuestion['answer'] as String;
+
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Question ${index + 1}: $questionText',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 16),
+                Column(
+                  children: options.map((option) {
+                    return RadioListTile<String>(
+                      title: Text(option),
+                      value: option,
+                      groupValue: _selectedAnswers[index],
+                      onChanged: (String? value) {
+                        _checkAnswer(index, value);
+                      },
+                    );
+                  }).toList(),
+                ),
+                SizedBox(height: 16),
+                if (_isAnswerCorrect.containsKey(index) &&
+                    _isAnswerCorrect[index] == true)
+                  Text(
+                    'Correct Answer: $correctAnswer',
+                    style: TextStyle(
+                        color: Colors.green, fontWeight: FontWeight.bold),
+                  ),
+                if (_isAnswerCorrect.containsKey(index) &&
+                    _isAnswerCorrect[index] == false)
+                  Text(
+                    'Correct Answer: $correctAnswer',
+                    style: TextStyle(
+                        color: Colors.red, fontWeight: FontWeight.bold),
+                  ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
