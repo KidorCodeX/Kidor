@@ -118,3 +118,24 @@ class _QuizHomePageState extends State<QuizHomePage> {
             ),
           ],
         ),
+         body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40, left: 15, right: 15),
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: bgColor3,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.24),
+                      blurRadius: 20.0,
+                      offset: const Offset(0.0, 10.0),
+                      spreadRadius: -10,
+                      blurStyle: BlurStyle.outer,
+                    )
+                  ],
+                ),
+                //child: Image.asset("assets/dash.png"),
+              ),
