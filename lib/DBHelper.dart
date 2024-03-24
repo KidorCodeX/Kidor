@@ -12,3 +12,24 @@ class DBHelper {
     _database = await initDatabase();
     return _database!;
   }
+
+  static Future<Database> initDatabase() async {
+    final path = await getDatabasesPath();
+
+    return openDatabase(
+      '$path/quiz.db',
+      onCreate: (db, version) async {
+        // Create your tables here
+        await db.execute('''
+        CREATE TABLE IF NOT EXISTS mcq_questions (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          domain TEXT,
+          question TEXT,
+          options TEXT,
+          answer TEXT
+        )
+      ''');
+      },
+      version: 1,
+    );
+  }
