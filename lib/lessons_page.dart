@@ -328,3 +328,23 @@ class LessonsPage extends StatelessWidget {
                             width: 163,
                             height: 155,
                             decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage("assets/lessonsPage/astronomy.png"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: RawMaterialButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Astronomy()),
+                                );
+                              },
+                              shape: const RoundedRectangleBorder(
+                              ),
+                              padding: const EdgeInsets.all(20.0), 
+                              
+                            ),
+                                             
+                          ),
