@@ -238,3 +238,23 @@ class _LoginState extends State<Login> {
                       ),
                       shape: MaterialStateProperty.all<OutlinedBorder>(
                         RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
+                    ),
+                    child: Container(
+                      width: 320,
+                      height: 60,
+                      decoration: ShapeDecoration(
+                        color: const Color.fromRGBO(107, 112, 248, 1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Log in',
+                            style: TextStyle(
+                              color: Colors.white,                          
