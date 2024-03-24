@@ -69,3 +69,20 @@ class Astronomy extends StatelessWidget {
     }
   }
 }
+
+
+class LessonCard extends StatelessWidget {
+  final String lessonImagePath;
+  final String heading;
+  final String paragraph;
+  final String gameButtonImagePath; 
+  final VoidCallback onTap; 
+
+  const LessonCard({
+    Key? key,
+    required this.lessonImagePath,
+    required this.heading,
+    required this.paragraph,
+    required this.gameButtonImagePath,
+    required this.onTap,
+  }) : super(key: key);
