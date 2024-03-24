@@ -348,3 +348,17 @@ class LessonsPage extends StatelessWidget {
                             ),
                                              
                           ),
+                       ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+}
