@@ -254,3 +254,47 @@ class LessonsPage extends StatelessWidget {
                             },
                             shape: const RoundedRectangleBorder(
                             ),
+                            padding: const EdgeInsets.all(20.0), 
+                            
+                          ),
+                    
+                        ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 30),
+                         child: Container(
+                            width: 163,
+                            height: 155,
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                image: AssetImage("assets/lessonsPage/english.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: RawMaterialButton(
+                              onPressed: () {
+                                // Add your onPressed logic here
+                              },
+                              shape: const RoundedRectangleBorder(
+                              ),
+                              padding: const EdgeInsets.all(20.0), 
+                              
+                            ),
+                                             
+                          ),
+                       ),
+                      ],
+                    ),
+                  ),
+                )
+              ),
+              Container(
+                width: double.infinity,
+                height: 160,
+                color: Colors.white,
+                margin: const EdgeInsets.all(10),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 17),
+                    child: Row(
+                      children: [
