@@ -75,7 +75,7 @@ class _QuizScreenState extends State<QuizScreen> {
     }
   }
 
- @override
+  @override
   void initState() {
     super.initState();
     _controller = PageController(initialPage: 0);
@@ -123,7 +123,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                 Padding(
+                Padding(
                   padding: const EdgeInsets.only(right: 14, bottom: 10),
                   child: Row(
                     children: [
@@ -316,3 +316,62 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
   }
+
+  void _resetQuestionLocks() {
+    for (var question in widget.questionlenght) {
+      question.isLocked = false;
+    }
+    questionTimerSeconds = 20;
+  }
+
+  ElevatedButton buildElevatedButton() {
+    //  const Color bgColor3 = Color(0xFF5170FD);
+    const Color cardColor = Color.fromARGB(255, 164, 98, 251);
+
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(cardColor),
+        fixedSize: MaterialStateProperty.all(
+          Size(MediaQuery.sizeOf(context).width * 0.80, 40),
+        ),
+        elevation: MaterialStateProperty.all(4),
+      ),
+      onPressed: () {
+        if (_questionNumber < widget.questionlenght.length) {
+          _controller.nextPage(
+            duration: const Duration(milliseconds: 800),
+            curve: Curves.easeInOut,
+          );
+          setState(() {
+            _questionNumber++;
+            isLocked = false;
+          });
+          _resetQuestionLocks();
+          startTimerOnQuestions();
+        } else {
+          _timer?.cancel();
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultsScreen(
+                score: score,
+                totalQuestions: widget.questionlenght.length,
+                whichTopic: widget.topicType,
+              ),
+            ),
+          );
+        }
+      },
+      child: Text(
+        _questionNumber < widget.questionlenght.length
+            ? 'Next Question'
+            : 'Result',
+        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+      ),
+    );
+  }
+}
