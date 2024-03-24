@@ -3,7 +3,7 @@ import 'package:my_first_app/web_view_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-final Uri _url = Uri.parse('https://webxr.run/4X5EpkPnbxeoG');
+final Uri _url = Uri.parse('https://webxr.run/k7rWmZx2R8J7x');
 final Uri _url1 = Uri.parse('https://ar-code.com/ec6gEkIqh');
 final Uri _url2 = Uri.parse('https://webxr.run/4X5EpkPnbxeoG');
 
