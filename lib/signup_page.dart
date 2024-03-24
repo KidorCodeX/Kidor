@@ -314,3 +314,22 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                   ),
+                  Padding(
+                  padding: const EdgeInsets.only(left: 18, right: 8, top: 15, bottom: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Already have an account? ",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Login()),
+                          );
+                        },
