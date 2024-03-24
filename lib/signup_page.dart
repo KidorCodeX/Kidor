@@ -155,3 +155,50 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                   ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Last Name",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15,bottom: 15),
+                    child: TextField(
+                      controller: lastNameController,
+                      decoration: InputDecoration(
+                          hintText: "Ranasinghe",
+                          hintStyle: TextStyle(
+                            color: Colors.grey.shade500,
+                            fontSize: 14,
+                          ),
+                          filled: true,
+                          fillColor: Colors.grey.shade100,
+                          focusedBorder: border,
+                          enabledBorder: border
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Email Address ",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
