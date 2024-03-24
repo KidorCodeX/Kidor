@@ -19,3 +19,31 @@ class QuizScreen extends StatefulWidget {
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
+
+class _QuizScreenState extends State<QuizScreen> {
+  int questionTimerSeconds = 20;
+  Timer? _timer;
+  int _questionNumber = 1;
+  PageController _controller = PageController();
+  int score = 0;
+  bool isLocked = false;
+  List optionsLetters = ["A.", "B.", "C.", "D."];
+
+  void startTimerOnQuestions() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (mounted) {
+        setState(() {
+          if (questionTimerSeconds > 0) {
+            questionTimerSeconds--;
+          } else {
+            _timer?.cancel();
+            navigateToNewScreen();
+          }
+        });
+      }
+    });
+  }
+
+  void stopTime() {
+    _timer?.cancel();
+  }
