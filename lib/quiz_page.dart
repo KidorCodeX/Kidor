@@ -83,3 +83,18 @@ class QuizPage extends StatelessWidget {
                                     //color: Colors.black,
                                     child: Text(
                                       'Quiz | Revise',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(0),
+                                  child: Container(
+                                    width: 40,
+                                    height: 2,
+                                    color: Colors.white,
+                                  ),
