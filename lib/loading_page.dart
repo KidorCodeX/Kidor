@@ -33,3 +33,38 @@ class _LoadingPageState extends State<LoadingPage> {
         context,
         MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
       );
+    } else {
+      setState(() {
+        _loading = false;
+      });
+    }
+  }
+
+  Future<void> sendVerificationEmail() async {
+    User? user = _auth.currentUser;
+    if (user != null) {
+      try {
+        await user.sendEmailVerification();
+        // Show a message that the verification email has been sent
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Verification email has been sent.'),
+          ),
+        );
+      } catch (e) {
+        // Show an error message if the verification email fails to send
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to send verification email. Please try again later.'),
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Loading'),
+      ),
