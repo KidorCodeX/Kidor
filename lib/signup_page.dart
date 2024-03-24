@@ -94,3 +94,64 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    width: 346,
+                    height: 56,
+                    child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 12),
+                          child: Text("Sign up to continue",
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.black
+                            ),
+                          ),
+                        ),
+                      ),
+                  ),
+                  Container(
+                    width: 158,
+                    height: 105,
+                    decoration: ShapeDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage("assets/signUp.png"),
+                        fit: BoxFit.fill,
+                      ),
+                                              
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(1),
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "First Name",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                    child: TextField(
+                      controller: firstNameController,
+                      decoration: InputDecoration(
+                          hintText: "Amadee",
+                          hintStyle: TextStyle(
+                            color: Colors.grey.shade500,
+                            fontSize: 14,
+                          ),
+                          filled: true,
+                          fillColor: Colors.grey.shade100,
+                          focusedBorder: border,
+                          enabledBorder: border
+                      ),
+                    ),
+                  ),
