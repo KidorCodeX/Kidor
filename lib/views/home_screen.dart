@@ -139,3 +139,45 @@ class _QuizHomePageState extends State<QuizHomePage> {
                 ),
                 //child: Image.asset("assets/dash.png"),
               ),
+              Center(
+                child: RichText(
+                  text: TextSpan(children: [
+                    TextSpan(
+                      text: "Lesson-Quiz ",
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                            fontSize: 25,
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            fontWeight: FontWeight.w400,
+                          ),
+                    ),
+                  ]),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 0.85,
+                ),
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemCount: _topicsList.length,
+                itemBuilder: (context, index) {
+                  final topicsData = _topicsList[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizScreen(
+                            topicType: topicsData.topicName,
+                            topicImage: Image.asset("assets/magnet.jpg"),
+                            questionlenght: topicsData.topicQuestions,
+                            optionsList: topicsData.topicQuestions
+                                .map((question) => question.options)
+                                .toList(),
+                          ),
