@@ -87,4 +87,34 @@ class _QuizHomePageState extends State<QuizHomePage> {
     });
   }
 
- 
+   @override
+  Widget build(BuildContext context) {
+    const Color bgColor = Color.fromARGB(255, 128, 91, 237);
+    const Color bgColor3 = Color.fromARGB(255, 255, 255, 255);
+    return Scaffold(
+      backgroundColor: bgColor3,
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage(username: "Student")),
+                  );
+            },
+          ),
+          actions: [
+            Container(
+              width: 100,
+              decoration: ShapeDecoration(
+                image: const DecorationImage(
+                  image: AssetImage("assets/logo.jpg"),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+          ],
+        ),
