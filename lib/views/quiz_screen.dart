@@ -123,3 +123,48 @@ class _QuizScreenState extends State<QuizScreen> {
                 const SizedBox(
                   height: 10,
                 ),
+                 Padding(
+                  padding: const EdgeInsets.only(right: 14, bottom: 10),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          CupertinoIcons.clear,
+                          color: Color.fromARGB(255, 1, 1, 1),
+                          weight: 10,
+                        ),
+                      ),
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: LinearProgressIndicator(
+                            minHeight: 20,
+                            value: 1 - (questionTimerSeconds / 20),
+                            backgroundColor: Color.fromARGB(255, 209, 183, 243),
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            valueColor: const AlwaysStoppedAnimation(bgColor),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 12, left: 5, right: 5),
+                  width: MediaQuery.of(context).size.width * 0.90,
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 255, 253, 253),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.24),
+                        blurRadius: 20.0,
+                        offset: const Offset(0.0, 10.0),
+                        spreadRadius: 10,
+                      )
+                    ],
+                  ),
