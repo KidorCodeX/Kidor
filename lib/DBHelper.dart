@@ -33,3 +33,32 @@ class DBHelper {
       version: 1,
     );
   }
+
+  static Future<void> insertMCQ(String messageText, String question,
+      String options, String answer) async {
+    final db = await database;
+
+    // Ensure that the options field is stored as a TEXT column
+    await db.insert(
+      'mcq_questions',
+      {
+        'domain': messageText,
+        'question': question,
+        'options': options,
+        'answer': answer,
+      },
+      conflictAlgorithm:
+          ConflictAlgorithm.replace, // or use your preferred conflict algorithm
+    );
+  }
+
+  static Future<List<Map<String, dynamic>>> getAllMCQs() async {
+    final db = await database;
+    return db.query('mcq_questions');
+  }
+
+  static Future<void> deleteDomain(String domain) async {
+    final db = await database;
+    await db.delete('mcq_questions', where: 'domain = ?', whereArgs: [domain]);
+  }
+}
