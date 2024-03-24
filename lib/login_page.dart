@@ -51,4 +51,31 @@ class _LoginState extends State<Login> {
         email: _emailController.text,
         password: _passwordController.text,
       );
+
+      User? user = userCredential.user; 
+
+      if (user != null) {
+            // Save user email to shared preferences
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('user_email', _emailController.text);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomePage(username:'Start learning')),
+        );
+      } else {
+        print("User is null");
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Invalid email or password'),
+            duration: Duration(seconds: 3),
+          ),
+        );
+      } else {
+        Text('Error: $e');
+      }
+    }
+  }      
   
