@@ -118,3 +118,23 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(
+                                    width: 346,
+                  height: 56,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        "Login to continue",
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 50),
+                  child: Container(
+                    width: 158,
+                    height: 105,
