@@ -168,3 +168,33 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: TextField(
                     controller: _emailController,
+                    decoration: InputDecoration(
+                      hintText: "example@gmail.com",
+                      hintStyle: TextStyle(
+                        color: Colors.grey.shade500,
+                        fontSize: 14,
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade100,
+                      focusedBorder: border,
+                      enabledBorder: border,
+                      errorText: _emailError,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Password",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
