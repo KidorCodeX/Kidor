@@ -29,4 +29,26 @@ class _LoginState extends State<Login> {
     });
   }
 
+  Future<void> _signInWithEmailAndPassword() async {
+    _clearErrors();
+
+    if (_emailController.text.isEmpty || !_emailController.text.contains('@')) {
+      setState(() {
+        _emailError = 'Please enter a valid email address';
+      });
+      return;
+    }
+
+    if (_passwordController.text.isEmpty) {
+      setState(() {
+        _passwordError = 'Please enter a password';
+      });
+      return;
+    } 
+
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
   
