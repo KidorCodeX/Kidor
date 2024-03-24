@@ -32,7 +32,7 @@ class _NoteBookState extends State<NoteBook> {
     fetchNotesFromFirestore();
   }
 
- // Function to fetch notes from Firestore based on user's email
+  // Function to fetch notes from Firestore based on user's email
   Future<void> fetchNotesFromFirestore() async {
     if (userEmail != null) {
       final QuerySnapshot<Map<String, dynamic>> snapshot =
@@ -74,10 +74,18 @@ class _NoteBookState extends State<NoteBook> {
       ),
     );
   }
-  
-    // Function to add newly created note to the list
+
+  // Function to add newly created note to the list
   void onNewNoteCreated(Note note) {
     setState(() {
       notes.add(note);
     });
   }
+
+  // Function to delete a note from the list
+  void onNoteDeleted(int index) {
+    setState(() {
+      notes.removeAt(index);
+    });
+  }
+}
