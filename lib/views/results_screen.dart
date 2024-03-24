@@ -25,4 +25,37 @@ class ResultsScreen extends StatelessWidget {
         Navigator.popUntil(context, (route) => route.isFirst);
         return Future.value(false);
       },
-     
+     child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: bgColor3,
+          elevation: 0,
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.popUntil(context, (route) => route.isFirst);
+              },
+              icon: const Icon(
+                Icons.close,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: bgColor3,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Results On Your Quiz ",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: const Color.fromARGB(255, 0, 0, 0),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                    ),
