@@ -298,3 +298,33 @@ class LessonsPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 17),
                     child: Row(
                       children: [
+                        Container(
+                          width: 163,
+                          height: 155,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage("assets/lessonsPage/mathematics.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: RawMaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const MathsPage()),
+                                );
+                            },
+                            shape: const RoundedRectangleBorder(
+                            ),
+                            padding: const EdgeInsets.all(20.0), 
+                            
+                          ),
+                    
+                        ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 30),
+                         child: Container(
+                            width: 163,
+                            height: 155,
+                            decoration: BoxDecoration(
