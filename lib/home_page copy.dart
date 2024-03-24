@@ -128,3 +128,53 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                SingleChildScrollView(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 0),
+                                    child: Animate(
+                                      effects: [
+                                        FadeEffect(delay: 500.ms),
+                                        const SlideEffect()
+                                      ],
+                                      child: Container(
+                                        width: 105,
+                                        height: 105,
+                                        decoration: ShapeDecoration(
+                                          image: const DecorationImage(
+                                            image: AssetImage("assets/me.jpg"),
+                                            fit: BoxFit.fill,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
+                Container(
+                  width: 370,
+                  height: 125,
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFF6855FF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                            width: 100,
+                            height: 100,
