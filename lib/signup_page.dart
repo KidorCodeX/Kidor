@@ -263,3 +263,17 @@ class _SignupState extends State<Signup> {
                       validator: _validatePassword,
                     ),
                   ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 26),
+                    child: TextButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          signUpUser(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoadingPage(firstName: firstNameController.text)),
+                          );
+                          
+                        }
+                      },
