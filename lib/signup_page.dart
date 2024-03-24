@@ -65,3 +65,32 @@ class _SignupState extends State<Signup> {
       ),
       borderRadius: BorderRadius.circular(15),
     );
+
+    return MaterialApp(
+         debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: SingleChildScrollView(
+          child: Center(
+            child: Form( 
+              key: _formKey,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: SizedBox(
+                      width: 346,
+                      height: 56,
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 1),
+                          child: Text("Get started",
+                            style: TextStyle(
+                              fontSize: 29,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
