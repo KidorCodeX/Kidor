@@ -117,4 +117,27 @@ class ResultsCard extends StatelessWidget {
                 ],
               ),
             ),
+          ), Positioned(
+            left: -10,
+            top: MediaQuery.of(context).size.height * 0.178,
+            child: Container(
+              height: 25,
+              width: 25,
+              decoration:
+                  const BoxDecoration(color: bgColor3, shape: BoxShape.circle),
+            ),
           ),
+          Positioned(
+            right: -10,
+            top: MediaQuery.of(context).size.height * 0.178,
+            child: Container(
+              height: 25,
+              width: 25,
+              decoration:
+                  const BoxDecoration(color: bgColor3, shape: BoxShape.circle),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
