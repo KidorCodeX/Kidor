@@ -31,7 +31,8 @@ class _LoadingPageState extends State<LoadingPage> {
       // If email is verified, navigate to the home page with the first name
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
+        MaterialPageRoute(
+            builder: (context) => HomePage(username: widget.firstName)),
       );
     } else {
       setState(() {
@@ -55,7 +56,8 @@ class _LoadingPageState extends State<LoadingPage> {
         // Show an error message if the verification email fails to send
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Failed to send verification email. Please try again later.'),
+            content: Text(
+                'Failed to send verification email. Please try again later.'),
           ),
         );
       }
@@ -84,7 +86,21 @@ class _LoadingPageState extends State<LoadingPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          HomePage(username: widget.firstName)),
                 );
               },
               child: const Text('Verify'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: sendVerificationEmail,
+              child: const Text('Resend Verification Email'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
