@@ -64,3 +64,24 @@ class _ChatPageState extends State<ChatPage> {
       ),
     );
   }
+
+  Future<void> saveMCQToLocalDB(String jsonString) async {
+    // Convert the JSON string to a Map
+    Map<String, dynamic> mcqData = json.decode(jsonString);
+
+    print(mcqData);
+
+    // Assuming that 'questions' key contains a list of questions
+    List<dynamic> questionsList = mcqData['questions'];
+
+    for (var questionData in questionsList) {
+      String question = questionData['question'];
+      String answer = questionData['correct_answer'];
+
+      List<dynamic> optionsList = questionData['options'];
+      String options =
+          optionsList.map((option) => option.toString()).join(', ');
+
+      await DBHelper.insertMCQ(messageText, question, options, answer);
+    }
+  }
