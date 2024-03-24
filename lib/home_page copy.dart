@@ -178,3 +178,43 @@ class HomePage extends StatelessWidget {
                           child: Container(
                             width: 100,
                             height: 100,
+                            decoration: ShapeDecoration(
+                              image: const DecorationImage(
+                                image:
+                                    AssetImage("assets/homePage/astronaut.png"),
+                                fit: BoxFit.fill,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.all(2.0),
+                                child: SizedBox(
+                                  width: 200,
+                                  height: 30,
+                                  //color: Colors.black,
+                                  child: Text(
+                                    'AR Learning Gateway',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(0),
+                                child: Container(
+                                  width: 40,
+                                  height: 2,
+                                  color: Colors.white,
+                                ),
