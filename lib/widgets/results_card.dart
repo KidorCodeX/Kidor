@@ -67,7 +67,7 @@ class ResultsCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                   CustomPaint(
+                  CustomPaint(
                     painter: DrawDottedhorizontalline(),
                   ),
                   Expanded(
@@ -93,7 +93,8 @@ class ResultsCard extends StatelessWidget {
                                           MediaQuery.of(context).size.height *
                                               0.25),
                                 ],
-                              ) : Column(
+                              )
+                            : Column(
                                 children: [
                                   Text(
                                     "You can do it!",
@@ -117,7 +118,8 @@ class ResultsCard extends StatelessWidget {
                 ],
               ),
             ),
-          ), Positioned(
+          ),
+          Positioned(
             left: -10,
             top: MediaQuery.of(context).size.height * 0.178,
             child: Container(
@@ -141,3 +143,4 @@ class ResultsCard extends StatelessWidget {
       ),
     );
   }
+}
