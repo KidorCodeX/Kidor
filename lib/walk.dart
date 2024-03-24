@@ -33,3 +33,53 @@ class Walk extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              height: 450, 
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50),
+                ),
+              ),
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                children: [
+                   const Center(
+                    child: Padding(
+                      padding:  EdgeInsets.only(top: 50),
+                      child: SizedBox(
+                        width: 300,
+                        height: 60,
+                        child:  Center(
+                          child: Text("Choose Your Subject",
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight:  FontWeight.bold,
+                              )
+                          )
+                        )
+                      ),
+                    )
+                  ),
+                  const Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 1),
+                      child: SizedBox(
+                        width: 300,
+                        height: 120,
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 21),
+                            child: Text("Select your subject and unlock an augmented reality learning experience that brings your studies to life.",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight:  FontWeight.w400,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          )
+                        )
+                      ),
+                    )
+                  ),
