@@ -105,4 +105,24 @@ class SideBar extends StatelessWidget {
               ); 
             },
           ),
-          
+          ListTile(
+            leading: Icon(Icons.door_back_door), 
+            title: Text('AR portal'),
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ArPortalPage()),
+              );  
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.quiz), 
+            title: Text('Quizzes'),
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuizPage()),
+              );
+            },
+          ),
+         
