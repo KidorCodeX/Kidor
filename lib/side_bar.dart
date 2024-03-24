@@ -173,4 +173,25 @@ class SideBar extends StatelessWidget {
               ),
             ),
           ),
-          
+          Container(
+            height: 20,
+            width: 500,
+            child: const Align(
+              alignment: Alignment.center,
+              child: Text(
+                "CS-12 Code X",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Itim',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
