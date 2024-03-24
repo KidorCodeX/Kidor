@@ -25,7 +25,7 @@ class ResultsScreen extends StatelessWidget {
         Navigator.popUntil(context, (route) => route.isFirst);
         return Future.value(false);
       },
-     child: Scaffold(
+      child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: bgColor3,
@@ -59,3 +59,53 @@ class ResultsScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                               ),
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  whichTopic.toUpperCase(),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        fontSize: 15,
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        fontWeight: FontWeight.w400,
+                      ),
+                ),
+              ),
+              ResultsCard(
+                  roundedPercentageScore: roundedPercentageScore,
+                  bgColor3: bgColor3),
+              const SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(cardColor),
+                  fixedSize: MaterialStateProperty.all(
+                    Size(MediaQuery.sizeOf(context).width * 0.80, 40),
+                  ),
+                  elevation: MaterialStateProperty.all(4),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuizHomePage()),
+                  );
+                },
+                child: const Text(
+                  "Take another test",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
