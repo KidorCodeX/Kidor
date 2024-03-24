@@ -85,3 +85,39 @@ class _ChatPageState extends State<ChatPage> {
       await DBHelper.insertMCQ(messageText, question, options, answer);
     }
   }
+  Future<void> getChatResponse(ChatMessage m) async {
+    setState(() {
+      _messages.insert(0, m);
+      _typingUsers.add(_gptChatUser);
+    });
+
+    List<Messages> _messagesHistory = _messages.reversed.map((m) {
+      if (m.user == _currentUser) {
+        messageText = m.text;
+        return Messages(
+          role: Role.user,
+          content:
+              """ Generate two multiple-choice questions in JSON format based on the given input. If the input is irrelevant or not suitable for generating MCQs, please create two random multiple-choice questions related to general knowledge this is the input: ${m.text}
+               {
+  "questions": [
+    {
+      "question": "What is related to cats?",
+      "options": ["Dogs", "Fish", "Birds", "Mice"],
+      "correct_answer": "Dogs"
+    },
+    {
+      "question": "Choose the correct statement regarding gravity:",
+      "options": ["It pushes objects away from each other.", "It is stronger on the Moon than on Earth.", "It is responsible for holding planets in orbit around the Sun.", "It is a form of electromagnetic force."],
+      "correct_answer": "It is responsible for holding planets in orbit around the Sun."
+    }
+  ]
+}
+follow this format 
+               
+               """,
+        ); //and don't say anything else only the MCQ's, if you can not  create anything from it create something genaral knoledge and dont say anything only the mcqs
+      } else {
+        return Messages(role: Role.assistant, content: m.text);
+      }
+    }).toList();
+
