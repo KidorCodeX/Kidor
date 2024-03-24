@@ -28,3 +28,38 @@ class QuizPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(2),
                 ),
+              ),
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 17),
+                  child: Container(
+                    width: 370,
+                    height: 125,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFF6855FF),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 0,
+                            right: 0,
+                            child: Container(
+                              width: 100,
+                              height: 90,
+                              decoration: ShapeDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      "assets/quizPage/quizBarPic.png"),
+                                  fit: BoxFit.fill,
