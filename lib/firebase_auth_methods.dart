@@ -23,3 +23,23 @@ class FirebaseAuthMethods{
       showSnackBar(context, e.message!);
     }
   }
+
+  //email login
+  Future<void> loginWithEmail({
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password
+      );
+      if(!_auth.currentUser!.emailVerified){
+        const Text('User Not found');
+      }
+    }on FirebaseAuthException catch (e){
+      showSnackBar(context, e.message!);
+
+    }
+  }
