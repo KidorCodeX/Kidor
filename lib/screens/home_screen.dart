@@ -75,3 +75,9 @@ class _NoteBookState extends State<NoteBook> {
     );
   }
   
+    // Function to add newly created note to the list
+  void onNewNoteCreated(Note note) {
+    setState(() {
+      notes.add(note);
+    });
+  }
