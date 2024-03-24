@@ -218,3 +218,23 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           setState(() {
                             _isObscure = !_isObscure;                  
+                          });
+                        },
+                      ),
+                      errorText: _passwordError,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 26),
+                  child: TextButton(
+                    onPressed: _signInWithEmailAndPassword,
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        EdgeInsets.zero,
+                      ),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.transparent,
+                      ),
+                      shape: MaterialStateProperty.all<OutlinedBorder>(
+                        RoundedRectangleBorder(
