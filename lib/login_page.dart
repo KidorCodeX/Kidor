@@ -13,7 +13,6 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  
 
   bool _isObscure = true;
   final TextEditingController _emailController = TextEditingController();
@@ -44,7 +43,7 @@ class _LoginState extends State<Login> {
         _passwordError = 'Please enter a password';
       });
       return;
-    } 
+    }
 
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
@@ -52,15 +51,16 @@ class _LoginState extends State<Login> {
         password: _passwordController.text,
       );
 
-      User? user = userCredential.user; 
+      User? user = userCredential.user;
 
       if (user != null) {
-            // Save user email to shared preferences
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('user_email', _emailController.text);
+        // Save user email to shared preferences
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('user_email', _emailController.text);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage(username:'Start learning')),
+          MaterialPageRoute(
+              builder: (context) => const HomePage(username: 'Start learning')),
         );
       } else {
         print("User is null");
@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
         Text('Error: $e');
       }
     }
-  }      
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,14 +91,14 @@ class _LoginState extends State<Login> {
     );
 
     return MaterialApp(
-         debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
-                const Padding(  
-                                   padding: EdgeInsets.only(top: 170),
+                const Padding(
+                  padding: EdgeInsets.only(top: 170),
                   child: SizedBox(
                     width: 346,
                     height: 56,
@@ -118,7 +118,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(
-                                    width: 346,
+                  width: 346,
                   height: 56,
                   child: Center(
                     child: Padding(
@@ -150,7 +150,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                  padding:
+                      EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -165,7 +166,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                  padding:
+                      const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
@@ -183,7 +185,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                  padding:
+                      EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -198,7 +201,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                  padding:
+                      const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: _isObscure,
@@ -214,10 +218,12 @@ class _LoginState extends State<Login> {
                       enabledBorder: border,
                       suffixIcon: IconButton(
                         padding: const EdgeInsetsDirectional.only(end: 12),
-                        icon: _isObscure ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
+                        icon: _isObscure
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off),
                         onPressed: () {
                           setState(() {
-                            _isObscure = !_isObscure;                  
+                            _isObscure = !_isObscure;
                           });
                         },
                       ),
@@ -257,7 +263,7 @@ class _LoginState extends State<Login> {
                           Text(
                             'Log in',
                             style: TextStyle(
-                              color: Colors.white,    
+                              color: Colors.white,
                               fontSize: 24,
                             ),
                           ),
@@ -267,7 +273,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 18, right: 8, top: 15, bottom: 8),
+                  padding: const EdgeInsets.only(
+                      left: 18, right: 8, top: 15, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -277,4 +284,33 @@ class _LoginState extends State<Login> {
                           fontSize: 14,
                           fontWeight: FontWeight.w800,
                         ),
-                      ),                                                    
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Signup()),
+                          );
+                        },
+                        child: const Text(
+                          "Register",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color:
+                                Colors.red, // Change color to your preference
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
