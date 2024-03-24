@@ -22,4 +22,14 @@ class _NoteBookState extends State<NoteBook> {
     getUserEmail(); // Call function to get user's email from SharedPreferences
   }
 
+// Function to get user's email from SharedPreferences
+  Future<void> getUserEmail() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userEmail = prefs.getString('user_email');
+    });
+    // After getting user's email, fetch notes from Firestore
+    fetchNotesFromFirestore();
+  }
+
   
