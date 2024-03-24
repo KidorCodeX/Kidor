@@ -156,4 +156,21 @@ class SideBar extends StatelessWidget {
             );
             },
           ),
+          Container(
+            margin: const EdgeInsets.only(top: 80),
+            height: 30,
+            width: 500,
+            child: const Align(
+              alignment: Alignment.center,
+              child: Text(
+                "©Researched & Developed By",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Itim',
+                  fontSize: 15,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
           
