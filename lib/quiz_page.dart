@@ -98,3 +98,23 @@ class QuizPage extends StatelessWidget {
                                     height: 2,
                                     color: Colors.white,
                                   ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 12),
+                                  child: SizedBox(
+                                    width: 260,
+                                    height: 40,
+                                    //color: Colors.black,
+                                    child: Text(
+                                      'Would you like to generate your own quiz for a different lesson? We got you!',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),                                  
