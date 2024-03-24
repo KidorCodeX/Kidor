@@ -153,3 +153,38 @@ class LessonsPage extends StatelessWidget {
                         ),
                         Icon(
                           Icons.filter_list_outlined,                  
+                         color: Colors.black,
+                          size: 35,
+                        ),
+                      ],
+                    ),
+                
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 160,
+                color: Colors.white,
+                margin: const EdgeInsets.all(10),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 17),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 163,
+                          height: 155,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage("assets/lessonsPage/science.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: RawMaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const SciencePage()),
+                                );
