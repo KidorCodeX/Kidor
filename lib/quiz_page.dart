@@ -123,4 +123,185 @@ class QuizPage extends StatelessWidget {
                     ),
                   ),
                 ),
-               
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                    child: const Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.local_fire_department,
+                                color: Colors.black,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                'Quiz',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.filter_list_outlined,
+                            color: Colors.black,
+                            size: 35,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChatPage()),
+                    );
+                    print("working ");
+                  },
+                  child: Container(
+                    width: 350,
+                    height: 137,
+                    child: Material(
+                      elevation: 4,
+                      borderRadius: BorderRadius.circular(15),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 18),
+                            child: Container(
+                              width: 109,
+                              height: 100,
+                              decoration: ShapeDecoration(
+                                image: const DecorationImage(
+                                  image:
+                                      AssetImage("assets/quizPage/gQuiz.png"),
+                                  fit: BoxFit.fill,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 44, right: 64, bottom: 5),
+                                  child: Container(
+                                    width: 104,
+                                    height: 19,
+                                    child: const Text(
+                                      'Generate Quiz',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 168,
+                                  height: 37,
+                                  child: Text(
+                                    'Enter a text and create your own quiz',
+                                    style: TextStyle(fontSize: 13, height: 1),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Quizpage()),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 13),
+                    child: Container(
+                      width: 350,
+                      height: 137,
+                      child: Material(
+                        elevation: 4,
+                        borderRadius: BorderRadius.circular(15),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 18),
+                              child: Container(
+                                width: 109,
+                                height: 100,
+                                decoration: ShapeDecoration(
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                        "assets/quizPage/pgQuiz.png"),
+                                    fit: BoxFit.fill,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 42, right: 64, bottom: 5),
+                                    child: Container(
+                                      width: 104,
+                                      height: 19,
+                                      child: const Text(
+                                        'Previously Generated Quiz',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 168,
+                                    height: 50,
+                                    child: Text(
+                                      'Every quiz you create is saved here. View previously generated quizzes.',
+                                      style: TextStyle(fontSize: 13, height: 1),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
