@@ -47,3 +47,30 @@ class _QuizScreenState extends State<QuizScreen> {
   void stopTime() {
     _timer?.cancel();
   }
+
+  void navigateToNewScreen() {
+    if (_questionNumber < widget.questionlenght.length) {
+      _controller.nextPage(
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeInOut,
+      );
+      setState(() {
+        _questionNumber++;
+        isLocked = false;
+      });
+      _resetQuestionLocks();
+      startTimerOnQuestions();
+    } else {
+      _timer?.cancel();
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultsScreen(
+            score: score,
+            totalQuestions: widget.questionlenght.length,
+            whichTopic: widget.topicType,
+          ),
+        ),
+      );
+    }
+  }
