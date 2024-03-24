@@ -31,4 +31,40 @@ class SideBar extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
        
-           
+                    
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Kidor',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight:  FontWeight.bold,
+                  color: Colors.white
+                ),),
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage("assets/me.jpg"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Text('Free User',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white
+                ),),
+                const Text('Since 2024',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white
+                ),),
+              ],
+            ),
+
+          ),
+       
