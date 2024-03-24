@@ -202,3 +202,36 @@ class _SignupState extends State<Signup> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                    child: TextFormField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        hintText: "abc@gmail.com",
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontSize: 14,
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade100,
+                        focusedBorder: border,
+                        enabledBorder: border,
+                      ),
+                      validator: _validateEmail,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Password",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
