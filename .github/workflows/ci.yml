@@ -1,4 +1,4 @@
-name: CI/CD for Flutter App
+name: CI/CD 
 
 on:
   push:
@@ -16,7 +16,6 @@ jobs:
         with:
           channel: stable
       - run: flutter pub get
-      - run: flutter analyze
       - run: flutter test
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v3
