@@ -118,3 +118,43 @@ class QuizPage extends StatelessWidget {
                               ],
                             ),
                           ),                                  
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                    child: const Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.local_fire_department,
+                                color: Colors.black,
+                                size: 30,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                'Quiz',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.filter_list_outlined,
+                            color: Colors.black,
+                            size: 35,
+                          ),
+                        ],
+                      ),                          
