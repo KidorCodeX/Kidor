@@ -81,4 +81,93 @@ class _QuizpageState extends State<Quizpage> {
       );
     }
 
-    
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quiz Page'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Select a Domain:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Column(
+              children: _domains.asMap().entries.map((entry) {
+                final index = entry.key;
+                final domain = entry.value;
+                final points = _calculatePointsForDomain(
+                    index); // Function to calculate points
+
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: InkWell(
+                            onTap: () => _showQuizByDomain(domain),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '${index + 1}.',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    '$domain',
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.blue),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // Delete Button
+                    TextButton(
+                      onPressed: () {
+                        _deleteDomain(domain);
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        padding: EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: Text(
+                        'Delete',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                );
+              }).toList(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  int _calculatePointsForDomain(int domainIndex) {
+    // You can implement your logic to calculate points for each domain
+    // For example, you might have a data structure or logic to calculate points.
+    // Replace this with your actual logic.
+    return domainIndex * 10; // Sample logic, replace it with your own
+  }
+}
+
+
+
