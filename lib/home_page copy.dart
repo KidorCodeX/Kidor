@@ -306,7 +306,8 @@ class HomePage extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const QuizHomePage()),
+                                        builder: (context) =>
+                                            const QuizHomePage()),
                                   );
                                 },
                                 shape: const RoundedRectangleBorder(),
@@ -331,10 +332,152 @@ class HomePage extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const LessonsPage()),
+                                          builder: (context) =>
+                                              const LessonsPage()),
                                     );
                                   },
                                   shape: const RoundedRectangleBorder(),
                                   padding: const EdgeInsets.all(20.0),
                                 ),
                               ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )),
+                Container(
+                    width: double.infinity,
+                    height: 160,
+                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 13),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 163,
+                              height: 155,
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image:
+                                      AssetImage("assets/homePage/arGames.jpg"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: RawMaterialButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const GamePage()),
+                                  );
+                                },
+                                shape: const RoundedRectangleBorder(),
+                                padding: const EdgeInsets.all(20.0),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 22),
+                              child: Container(
+                                width: 163,
+                                height: 155,
+                                decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                        "assets/homePage/arPortal.jpg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child: RawMaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ArPortalPage()),
+                                    );
+                                  },
+                                  shape: const RoundedRectangleBorder(),
+                                  padding: const EdgeInsets.all(20.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )),
+                Container(
+                    width: double.infinity,
+                    height: 160,
+                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 13),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 163,
+                              height: 155,
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      "assets/homePage/noteBook.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: RawMaterialButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const NoteBook()),
+                                  );
+                                },
+                                shape: const RoundedRectangleBorder(),
+                                padding: const EdgeInsets.all(20.0),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 22),
+                              child: Container(
+                                width: 163,
+                                height: 155,
+                                decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                        "assets/homePage/quizzesMain.jpg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child: RawMaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const QuizPage()),
+                                    );
+                                  },
+                                  shape: const RoundedRectangleBorder(),
+                                  padding: const EdgeInsets.all(20.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
