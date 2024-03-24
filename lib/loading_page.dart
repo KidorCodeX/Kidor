@@ -68,3 +68,23 @@ class _LoadingPageState extends State<LoadingPage> {
       appBar: AppBar(
         title: const Text('Loading'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (_loading)
+              const CircularProgressIndicator(), // Show CircularProgressIndicator if loading
+            SizedBox(height: _loading ? 20 : 0), // Add spacing if loading
+            const Text(
+              'Please verify your email to continue.',
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
+                );
+              },
+              child: const Text('Verify'),
