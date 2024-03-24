@@ -33,4 +33,36 @@ class MathsPage extends StatelessWidget {
                 )
               ),
             ),
-          
+            LessonCard(
+              lessonImagePath: "assets/mathsPage/circleL.png",
+              heading: "Circle",
+              paragraph: "Learn everything  about circles and its formulas ",
+              gameButtonImagePath: "assets/gameButton.png",
+              onTap:
+              _launchUrl,
+            ),
+            LessonCard(
+              lessonImagePath: "assets/mathsPage/triangleL.png",
+              heading: "Triangle",
+              paragraph: "Learn everything  about triangles and its formulas",
+              gameButtonImagePath: "assets/gameButton.png",
+              onTap:_launchUrl1,
+            ),
+            LessonCard(
+              lessonImagePath: "assets/mathsPage/cubeL.png",
+              heading: "Cube",
+              paragraph: "Learn everything  about cubes and its formulas ",
+              gameButtonImagePath: "assets/gameButton.png",
+              onTap:_launchUrl2,
+            ),
+
+            
+          ],
+        )
+
+
+      ),
+    );
+  }
+
+  
