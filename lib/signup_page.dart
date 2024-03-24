@@ -37,3 +37,20 @@ class _SignupState extends State<Signup> {
  
  
 }
+
+
+  String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email address is required';
+    }
+    // Add more complex email validation if needed
+    return null;
+  }
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
+    }
+    // Add more complex password validation if needed
+    return null;
+  }
