@@ -257,4 +257,24 @@ class _LoginState extends State<Login> {
                           Text(
                             'Log in',
                             style: TextStyle(
-                              color: Colors.white,                          
+                              color: Colors.white,    
+                              fontSize: 24,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 18, right: 8, top: 15, bottom: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Don't have an account? ",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),                                                    
