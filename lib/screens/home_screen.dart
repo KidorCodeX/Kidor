@@ -32,4 +32,46 @@ class _NoteBookState extends State<NoteBook> {
     fetchNotesFromFirestore();
   }
 
+ // Function to fetch notes from Firestore based on user's email
+  Future<void> fetchNotesFromFirestore() async {
+    if (userEmail != null) {
+      final QuerySnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance
+              .collection('notes')
+              .where('userEmail',
+                  isEqualTo: userEmail) // Filter notes by user's email
+              .get();
+
+      List<Note> notest =
+          snapshot.docs.map((doc) => Note.fromMap(doc.data())).toList();
+
+      setState(() {
+        notes = snapshot.docs.map((doc) => Note.fromMap(doc.data())).toList();
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Kidor Notes"),
+      ),
+      body: ListView.builder(
+        itemCount: notes.length,
+        itemBuilder: (context, index) {
+          return NoteCard(
+              note: notes[index], index: index, onNoteDeleted: onNoteDeleted);
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  CreateNote(onNewNoteCreated: onNewNoteCreated)));
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
   
