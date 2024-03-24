@@ -5,12 +5,18 @@ import 'package:my_first_app/web_view_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-final Uri _url = Uri.parse('https://webxr.run/x5Q9RGmpLxkWD');
-final Uri _url1 = Uri.parse('https://webxr.run/V131LDZNYr8x4');
+final Uri _url = Uri.parse('https://webxr.run/4X5EpkPnbxeoG');
+final Uri _url1 = Uri.parse('https://ar-code.com/ec6gEkIqh');
 final Uri _url2 = Uri.parse('https://webxr.run/4X5EpkPnbxeoG');
 
+
 class BiologyPage extends StatelessWidget {
+  
+
+
   const BiologyPage({Key? key}) : super(key: key);
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -32,47 +38,46 @@ class BiologyPage extends StatelessWidget {
           ),
           LessonCard(
             lessonImagePath: "assets/biologyPage/heartL.png",
-            heading: "Heart",
-            paragraph:
-                "Explore the heart, its anatomy, functions, and significance. ",
-            gameButtonImagePath: "assets/gameButton.png",
-            onTap: _launchUrl,
+              heading: "Heart",
+              paragraph: "Explore the heart, its anatomy, functions, and significance. ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:
+              _launchUrl,
           ),
           LessonCard(
             lessonImagePath: "assets/biologyPage/brainL.png",
-            heading: "Brain",
-            paragraph: "Discover the brain, exploring its structure. ",
-            gameButtonImagePath: "assets/gameButton.png",
-            onTap: _launchUrl1,
+              heading: "Brain",
+              paragraph: "Discover the brain, exploring its structure. ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:_launchUrl1,
           ),
           LessonCard(
             lessonImagePath: "assets/biologyPage/animalCell.png",
-            heading: "AnimalCell",
-            paragraph: "Learn the structure of the smallest unit in animals ",
-            gameButtonImagePath: "assets/gameButton.png",
-            onTap: _launchUrl2,
+              heading: "AnimalCell",
+              paragraph: "Learn the structure of the smallest unit in animals ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:_launchUrl2,
           ),
         ],
       )),
     );
   }
 
+  
   Future<void> _launchUrl() async {
-    if (!await launchUrl(_url1)) {
-      throw Exception('Could not launch $_url1');
-    }
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
   }
-
+  }
   Future<void> _launchUrl1() async {
-    if (!await launchUrl(_url1)) {
-      throw Exception('Could not launch $_url1');
-    }
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
   }
-
+  }
   Future<void> _launchUrl2() async {
-    if (!await launchUrl(_url1)) {
-      throw Exception('Could not launch $_url1');
-    }
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
+  }
   }
 }
 
@@ -197,3 +202,10 @@ class LessonCard extends StatelessWidget {
     );
   }
 }
+
+// void _launchURL(BuildContext context, String url) {
+//   Navigator.push(
+//     context,
+//     MaterialPageRoute(builder: (context) => WebViewPage(url: url)),
+//   );
+// }

@@ -12,7 +12,7 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth _auth = FirebaseAuth.instance;
   bool _loading = false;
 
   @override
@@ -31,8 +31,7 @@ class _LoadingPageState extends State<LoadingPage> {
       // If email is verified, navigate to the home page with the first name
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-            builder: (context) => HomePage(username: widget.firstName)),
+        MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
       );
     } else {
       setState(() {
@@ -48,16 +47,15 @@ class _LoadingPageState extends State<LoadingPage> {
         await user.sendEmailVerification();
         // Show a message that the verification email has been sent
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text('Verification email has been sent.'),
           ),
         );
       } catch (e) {
         // Show an error message if the verification email fails to send
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-                'Failed to send verification email. Please try again later.'),
+          SnackBar(
+            content: Text('Failed to send verification email. Please try again later.'),
           ),
         );
       }
@@ -68,35 +66,33 @@ class _LoadingPageState extends State<LoadingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Loading'),
+        title: Text('Loading'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (_loading)
-              const CircularProgressIndicator(), // Show CircularProgressIndicator if loading
+              CircularProgressIndicator(), // Show CircularProgressIndicator if loading
             SizedBox(height: _loading ? 20 : 0), // Add spacing if loading
-            const Text(
+            Text(
               'Please verify your email to continue.',
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          HomePage(username: widget.firstName)),
+                  MaterialPageRoute(builder: (context) => HomePage(username: widget.firstName)),
                 );
               },
-              child: const Text('Verify'),
+              child: Text('Verify'),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: sendVerificationEmail,
-              child: const Text('Resend Verification Email'),
+              child: Text('Resend Verification Email'),
             ),
           ],
         ),
@@ -104,3 +100,4 @@ class _LoadingPageState extends State<LoadingPage> {
     );
   }
 }
+

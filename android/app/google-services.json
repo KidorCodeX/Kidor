@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "908346899981",
+    "firebase_url": "https://kidor-8fdec-default-rtdb.firebaseio.com",
+    "project_id": "kidor-8fdec",
+    "storage_bucket": "kidor-8fdec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908346899981:android:f4b8b75c82a6742388df44",
+        "android_client_info": {
+          "package_name": "com.example.my_first_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgjbpl6uO0KCLZhoEL0zPRP_CCFsVT29Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

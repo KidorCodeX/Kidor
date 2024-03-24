@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_first_app/noteBookModels/note_model.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
+ import 'package:shared_preferences/shared_preferences.dart'; 
 
 class CreateNote extends StatefulWidget {
-  const CreateNote({Key? key, required this.onNewNoteCreated})
-      : super(key: key);
+  const CreateNote({Key? key, required this.onNewNoteCreated}) : super(key: key);
 
   final Function(Note) onNewNoteCreated;
 
@@ -21,7 +20,7 @@ class _CreateNoteState extends State<CreateNote> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   late SharedPreferences _prefs;
 
-  @override
+   @override
   void initState() {
     super.initState();
     _loadSharedPreferences();
@@ -73,8 +72,7 @@ class _CreateNoteState extends State<CreateNote> {
             'title': titleController.text,
             'body': bodyController.text,
             'userEmail': userEmail,
-            'createdAt':
-                FieldValue.serverTimestamp(), // Timestamp for creation time
+            'createdAt': FieldValue.serverTimestamp(), // Timestamp for creation time
           };
 
           try {
@@ -84,7 +82,7 @@ class _CreateNoteState extends State<CreateNote> {
           } catch (e) {
             // Handle error
             print('Error saving note: $e');
-            Navigator.of(context).pop();
+             Navigator.of(context).pop();
           }
         },
         child: const Icon(Icons.save),
