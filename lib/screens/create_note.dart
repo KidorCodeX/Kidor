@@ -5,7 +5,8 @@ import 'package:my_first_app/noteBookModels/note_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CreateNote extends StatefulWidget {
-  const CreateNote({Key? key, required this.onNewNoteCreated}) : super(key: key);
+  const CreateNote({Key? key, required this.onNewNoteCreated})
+      : super(key: key);
 
   final Function(Note) onNewNoteCreated;
 
@@ -20,7 +21,7 @@ class _CreateNoteState extends State<CreateNote> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   late SharedPreferences _prefs;
 
-   @override
+  @override
   void initState() {
     super.initState();
     _loadSharedPreferences();
@@ -60,3 +61,34 @@ class _CreateNoteState extends State<CreateNote> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          if (titleController.text.isEmpty || bodyController.text.isEmpty) {
+            return;
+          }
+
+          final userEmail = _prefs.getString('user_email');
+
+          final noteData = {
+            'title': titleController.text,
+            'body': bodyController.text,
+            'userEmail': userEmail,
+            'createdAt':
+                FieldValue.serverTimestamp(), // Timestamp for creation time
+          };
+
+          try {
+            await _firestore.collection('notes').add(noteData);
+            widget.onNewNoteCreated(Note.fromMap(noteData));
+            Navigator.of(context).pop();
+          } catch (e) {
+            // Handle error
+            print('Error saving note: $e');
+            Navigator.of(context).pop();
+          }
+        },
+        child: const Icon(Icons.save),
+      ),
+    );
+  }
+}
