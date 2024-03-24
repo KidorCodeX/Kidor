@@ -74,3 +74,52 @@ class _QuizScreenState extends State<QuizScreen> {
       );
     }
   }
+
+ @override
+  void initState() {
+    super.initState();
+    _controller = PageController(initialPage: 0);
+    _resetQuestionLocks();
+    startTimerOnQuestions();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    const Color bgColor3 = Color.fromARGB(255, 255, 255, 255);
+    const Color bgColor = Color.fromARGB(255, 146, 110, 247);
+
+    return WillPopScope(
+      onWillPop: () {
+        Navigator.popUntil(context, (route) => route.isFirst);
+        return Future.value(false);
+      },
+      child: Scaffold(
+        backgroundColor: bgColor3,
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "${widget.topicType} Quiz",
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
