@@ -5,6 +5,10 @@ import 'package:my_first_app/web_view_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+final Uri _url = Uri.parse('https://webxr.run/x5Q9RGmpLxkWD');
+final Uri _url1 = Uri.parse('https://webxr.run/V131LDZNYr8x4');
+final Uri _url2 = Uri.parse('https://webxr.run/4X5EpkPnbxeoG');
+
 class BiologyPage extends StatelessWidget {
   const BiologyPage({Key? key}) : super(key: key);
 
