@@ -67,4 +67,22 @@ class SideBar extends StatelessWidget {
             ),
 
           ),
-       
+          ListTile(
+              leading: Icon(Icons.home), 
+              title: Text('Home'),
+              onTap: () {
+                
+              },
+            ),
+
+          ListTile(
+            leading: Icon(Icons.play_lesson), 
+            title: Text('AR Lessons'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LessonsPage()),
+              );
+            },
+          ),
+          
