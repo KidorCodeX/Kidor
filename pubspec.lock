@@ -523,6 +523,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< Updated upstream
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -616,6 +617,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+=======
+>>>>>>> Stashed changes
   lints:
     dependency: transitive
     description:
@@ -644,9 +647,10 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb
+      sha256: "1803e76e6653768d64ed8ff2e1e67bea3ad4b923eb5c56a295c3e634bad5960e"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "0.12.16+1"
   material_buttonx:
     dependency: "direct main"
@@ -656,6 +660,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+=======
+    version: "0.12.16"
+>>>>>>> Stashed changes
   material_color_utilities:
     dependency: transitive
     description:
@@ -668,9 +675,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: d584fa6707a52763a52446f02cc621b077888fb63b93bbcb1143a7be5a0c0c04
+      sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "1.11.0"
   mock_exceptions:
     dependency: transitive
@@ -936,6 +944,25 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+=======
+    version: "1.10.0"
+  path:
+    dependency: transitive
+    description:
+      name: page_transition
+      sha256: dee976b1f23de9bbef5cd512fe567e9f6278caee11f5eaca9a2115c19dc49ef6
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
+  path:
+    dependency: "direct main"
+    description:
+      name: path
+      sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.8.3"
+>>>>>>> Stashed changes
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1141,6 +1168,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+<<<<<<< Updated upstream
   video_player:
     dependency: transitive
     description:
@@ -1182,12 +1210,16 @@ packages:
     source: hosted
     version: "2.3.0"
   vm_service:
+=======
+  web:
+>>>>>>> Stashed changes
     dependency: transitive
     description:
-      name: vm_service
-      sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
+      name: web
+      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "13.0.0"
   watcher:
     dependency: transitive
@@ -1269,6 +1301,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+=======
+    version: "0.3.0"
+>>>>>>> Stashed changes
 sdks:
   dart: ">=3.3.0 <4.0.0"
   flutter: ">=3.19.0"
