@@ -22,3 +22,28 @@ class LessonsPage extends StatelessWidget {
           actions: [
             Container(
               width: 100,
+                image: const DecorationImage(
+                  image: AssetImage("assets/logo.jpg"),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+          ],
+        ),
+
+      body: SingleChildScrollView( 
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 370,
+                height: 125,
+                decoration: ShapeDecoration(
+                  color: const Color(0xFF6855FF),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
