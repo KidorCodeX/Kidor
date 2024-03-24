@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/ar_portal_page.dart';
-import 'package:my_first_app/user_profile_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:my_first_app/firebase_options.dart';
+import 'package:my_first_app/welcome_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,10 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: "App bar", home: UserProfile());
+    return MaterialApp(
+      title: "App bar",
+      debugShowCheckedModeBanner: false,
+      home: WelcomePage(),
+    );
   }
 }
