@@ -191,3 +191,10 @@ class LessonCard extends StatelessWidget {
     );
   }
 }
+
+void _launchURL(BuildContext context, String url) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => WebViewPage(url: url)),
+  );
+}
