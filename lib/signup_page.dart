@@ -235,3 +235,31 @@ class _SignupState extends State<Signup> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                    child: TextFormField(
+                      obscureText: _isObscure,
+                      controller: passwordController,
+                      decoration: InputDecoration(
+                        hintText: "Password",
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontSize: 14,
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade100,
+                        focusedBorder: border,
+                        enabledBorder: border,
+                        suffixIcon: IconButton(
+                          padding: const EdgeInsetsDirectional.only(end: 12),
+                          icon: _isObscure ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          },
+                        ),
+                      ),
+                      validator: _validatePassword,
+                    ),
+                  ),
