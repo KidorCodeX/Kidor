@@ -93,4 +93,28 @@ class ResultsCard extends StatelessWidget {
                                           MediaQuery.of(context).size.height *
                                               0.25),
                                 ],
-                              )
+                              ) : Column(
+                                children: [
+                                  Text(
+                                    "You can do it!",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                  ),
+                                  Image.asset("assets/sadAstronut.gif",
+                                      fit: BoxFit.fill,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.25),
+                                ],
+                              ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
