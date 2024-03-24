@@ -12,7 +12,7 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  bool _isObscure = true;
+  bool _isObscure = true; // Boolean variable to track password visibility
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController firstNameController = TextEditingController();
@@ -22,6 +22,7 @@ class _SignupState extends State<Signup> {
   @override
   void dispose() {
     super.dispose();
+     // Dispose the controllers to free up resources when the state is destroyed
     emailController.dispose();
     passwordController.dispose();
   }
