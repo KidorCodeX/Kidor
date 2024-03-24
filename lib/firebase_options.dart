@@ -69,6 +69,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'kidor-8fdec.appspot.com',
     iosBundleId: 'com.example.myFirstApp',
   );
+
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyA8RAd-By-VqsByozEC81c9QJrc1edtCHY',
     appId: '1:908346899981:ios:28f8d0ef2c2b73c588df44',
@@ -78,3 +79,5 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.myFirstApp.RunnerTests',
   );
 }
+
+

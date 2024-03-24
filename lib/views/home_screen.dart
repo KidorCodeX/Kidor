@@ -1,6 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:my_first_app/home_page.dart';
+import 'package:my_first_app/home_page.dart'; 
 import 'package:my_first_app/models/flutter_topics_model.dart';
 import 'package:my_first_app/models/humanHeart10_questions_model%20copy%209.dart';
 import 'package:my_first_app/views/quiz_screen.dart'; // Import QuizScreen
@@ -35,7 +35,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
             // Extract topic details from the map
             int id = topicMap['id'];
             String topicName = topicMap['topicName'];
-            String topicImage = topicMap['topicImage'];
+            String topicImage = topicMap['topicImage']; 
 
             // Ensure topicQuestions is treated as List<Map<String, dynamic>>
             List<dynamic> questionMapsss = topicMap['topicQuestions'];
@@ -49,11 +49,11 @@ class _QuizHomePageState extends State<QuizHomePage> {
               optionMaps.forEach((optionMap) {
                 String optionText = optionMap['text'];
                 bool isCorrect = optionMap['isCorrect'];
-                options
-                    .add(LayOutOption(text: optionText, isCorrect: isCorrect));
+                options.add(LayOutOption(text: optionText, isCorrect: isCorrect));
               });
 
-              Map correctAnswerMap = questionMap['correctAnswer'];
+              Map correctAnswerMap =
+                  questionMap['correctAnswer'];
               LayOutOption correctAnswer = LayOutOption(
                   text: correctAnswerMap['text'],
                   isCorrect: correctAnswerMap['isCorrect']);
@@ -66,18 +66,19 @@ class _QuizHomePageState extends State<QuizHomePage> {
                 id: id,
                 correctAnswer: correctAnswer,
               ));
-            });
+            }); 
 
             // Construct and return the topic object
             return FlutterTopics(
               id: id,
               topicName: topicName,
               topicImage: Image.asset("assets/magnet.jpg"),
-              topicColor: cardColor,
+              topicColor:cardColor,
               topicQuestions: questions,
             );
           }).toList();
         });
+ 
       } else {
         print("Failed to fetch data or data is not in the expected format");
       }
@@ -93,31 +94,30 @@ class _QuizHomePageState extends State<QuizHomePage> {
     return Scaffold(
       backgroundColor: bgColor3,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => HomePage(username: "Student")),
-            );
-          },
-        ),
-        actions: [
-          Container(
-            width: 100,
-            decoration: ShapeDecoration(
-              image: const DecorationImage(
-                image: AssetImage("assets/logo.jpg"),
-                fit: BoxFit.fill,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage(username: "Student")),
+                  );
+            },
+          ),
+          actions: [
+            Container(
+              width: 100,
+              decoration: ShapeDecoration(
+                image: const DecorationImage(
+                  image: AssetImage("assets/logo.jpg"),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2),
+                ),
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 40, left: 15, right: 15),

@@ -33,12 +33,7 @@ class _SignupState extends State<Signup> {
     password: passwordController.text,
     context: scaffoldContext,
   );
-
- 
- 
 }
-
-
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email address is required';

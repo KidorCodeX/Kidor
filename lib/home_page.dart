@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:my_first_app/ar_game_page.dart';
 import 'package:my_first_app/ar_portal_page.dart';
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             )),
-        drawer: const SideBar(),
+        drawer: SideBar(),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
@@ -68,7 +69,7 @@ class HomePage extends StatelessWidget {
                                         Animate(
                                           effects: [
                                             FadeEffect(delay: 500.ms),
-                                            const SlideEffect(),
+                                            SlideEffect(),
                                           ],
                                           child: const Text(
                                             'Welcome,',
@@ -80,7 +81,7 @@ class HomePage extends StatelessWidget {
                                         Animate(
                                           effects: [
                                             FadeEffect(delay: 500.ms),
-                                            const SlideEffect()
+                                            SlideEffect()
                                           ],
                                           child: Text(
                                             '$username !',
@@ -134,7 +135,7 @@ class HomePage extends StatelessWidget {
                                     child: Animate(
                                       effects: [
                                         FadeEffect(delay: 500.ms),
-                                        const SlideEffect()
+                                        SlideEffect()
                                       ],
                                       child: Container(
                                         width: 105,
@@ -306,8 +307,7 @@ class HomePage extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const QuizHomePage()),
+                                        builder: (context) => QuizHomePage()),
                                   );
                                 },
                                 shape: const RoundedRectangleBorder(),
@@ -332,8 +332,7 @@ class HomePage extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              const LessonsPage()),
+                                          builder: (context) => LessonsPage()),
                                     );
                                   },
                                   shape: const RoundedRectangleBorder(),
@@ -371,7 +370,7 @@ class HomePage extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const GamePage()),
+                                        builder: (context) => GamePage()),
                                   );
                                 },
                                 shape: const RoundedRectangleBorder(),
@@ -396,8 +395,7 @@ class HomePage extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ArPortalPage()),
+                                          builder: (context) => ArPortalPage()),
                                     );
                                   },
                                   shape: const RoundedRectangleBorder(),
@@ -435,7 +433,7 @@ class HomePage extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const NoteBook()),
+                                        builder: (context) => NoteBook()),
                                   );
                                 },
                                 shape: const RoundedRectangleBorder(),
@@ -460,8 +458,7 @@ class HomePage extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              const QuizPage()),
+                                          builder: (context) => QuizPage()),
                                     );
                                   },
                                   shape: const RoundedRectangleBorder(),

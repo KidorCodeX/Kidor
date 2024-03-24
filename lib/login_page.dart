@@ -13,10 +13,11 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  
 
   bool _isObscure = true;
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   String? _emailError;
   String? _passwordError;
@@ -43,7 +44,7 @@ class _LoginState extends State<Login> {
         _passwordError = 'Please enter a password';
       });
       return;
-    }
+    } 
 
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
@@ -51,16 +52,15 @@ class _LoginState extends State<Login> {
         password: _passwordController.text,
       );
 
-      User? user = userCredential.user;
+      User? user = userCredential.user; 
 
       if (user != null) {
-        // Save user email to shared preferences
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        prefs.setString('user_email', _emailController.text);
+            // Save user email to shared preferences
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('user_email', _emailController.text);
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => const HomePage(username: 'Start learning')),
+          MaterialPageRoute(builder: (context) => HomePage(username:'Start learning')),
         );
       } else {
         print("User is null");
@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text('Invalid email or password'),
             duration: Duration(seconds: 3),
           ),
@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
     );
 
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+         debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
           child: Center(
@@ -150,8 +150,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const Padding(
-                  padding:
-                      EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                  padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -166,8 +165,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
@@ -185,8 +183,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const Padding(
-                  padding:
-                      EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
+                  padding: EdgeInsets.only(left: 18, right: 8, top: 8, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -201,8 +198,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: _isObscure,
@@ -218,9 +214,7 @@ class _LoginState extends State<Login> {
                       enabledBorder: border,
                       suffixIcon: IconButton(
                         padding: const EdgeInsetsDirectional.only(end: 12),
-                        icon: _isObscure
-                            ? const Icon(Icons.visibility)
-                            : const Icon(Icons.visibility_off),
+                        icon: _isObscure ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
                         onPressed: () {
                           setState(() {
                             _isObscure = !_isObscure;
@@ -273,8 +267,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                      left: 18, right: 8, top: 15, bottom: 8),
+                  padding: const EdgeInsets.only(left: 18, right: 8, top: 15, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -289,8 +282,7 @@ class _LoginState extends State<Login> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const Signup()),
+                            MaterialPageRoute(builder: (context) => Signup()),
                           );
                         },
                         child: const Text(
@@ -298,8 +290,7 @@ class _LoginState extends State<Login> {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w800,
-                            color:
-                                Colors.red, // Change color to your preference
+                            color: Colors.red, // Change color to your preference
                           ),
                         ),
                       ),

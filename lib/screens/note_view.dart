@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/noteBookModels/note_model.dart';
 
 class NoteView extends StatelessWidget {
-  const NoteView(
-      {super.key,
-      required this.note,
-      required this.index,
-      required this.onNoteDeleted});
+  const NoteView({super.key, required this.note, required this.index, required this.onNoteDeleted});
 
   final Note note;
   final int index;
@@ -20,36 +16,38 @@ class NoteView extends StatelessWidget {
         title: const Text("Note View"),
         actions: [
           IconButton(
-            onPressed: () {
+            onPressed: (){
               showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: const Text("Delete This ?"),
-                      content: Text("Note ${note.title} will be deleted!"),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            onNoteDeleted(index);
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text("DELETE"),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text("CANCEL"),
-                        )
-                      ],
-                    );
-                  });
-            },
+                context: context, 
+                builder: (context){
+                  return AlertDialog(
+                    title: const Text("Delete This ?"),
+                    content: Text("Note ${note.title} will be deleted!"),
+                    actions: [
+                      TextButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                          onNoteDeleted(index);
+                          Navigator.of(context).pop();
+                        }, 
+                        child: const Text("DELETE"),
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        }, 
+                        child: const Text("CANCEL"),
+                      )
+                    ],
+                  );
+                }
+              );
+            }, 
             icon: Icon(Icons.delete),
           ),
         ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -57,14 +55,16 @@ class NoteView extends StatelessWidget {
           children: [
             Text(
               note.title,
-              style: const TextStyle(fontSize: 26),
+              style: const TextStyle(
+                fontSize: 26
+              ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10,),
             Text(
               note.body,
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(
+                fontSize: 18
+              ),
             ),
           ],
         ),
