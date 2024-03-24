@@ -145,4 +145,15 @@ class SideBar extends StatelessWidget {
               );   // You can use Navigator to push to the desired page
             },
           ),
+          ListTile(
+            leading: Icon(Icons.accessible_forward_rounded), 
+            title: Text('Sign Out'),
+            onTap: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Login()), 
+            );
+            },
+          ),
           
