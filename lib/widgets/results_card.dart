@@ -67,3 +67,30 @@ class ResultsCard extends StatelessWidget {
                       ),
                     ),
                   ),
+                   CustomPaint(
+                    painter: DrawDottedhorizontalline(),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: roundedPercentageScore >= 75
+                            ? Column(
+                                children: [
+                                  Text(
+                                    "You have Earned this Star",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                  ),
+                                  Image.asset("assets/star.gif",
+                                      fit: BoxFit.fill,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.25),
+                                ],
+                              )
