@@ -98,3 +98,33 @@ class HomePage extends StatelessWidget {
                                                 color: Colors.grey,
                                               ),
                                               SizedBox(width: 5),
+                                              Text(
+                                                'Free User',
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 15),
+                                                child: Icon(
+                                                  Icons.circle,
+                                                  color: Colors.purple,
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Text(
+                                                'Since 2024',
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
