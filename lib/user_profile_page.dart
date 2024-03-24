@@ -7,14 +7,27 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kidor",),
-          
-        centerTitle: true,
-        leading: Image.asset("assets/idk.jpg", height: 300,width: 200),
-      
-        toolbarHeight: 100,
-          
-      ),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: [
+            Container(
+              width: 100,
+              decoration: ShapeDecoration(
+                image: const DecorationImage(
+                  image: AssetImage("assets/logo.jpg"),
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+          ],
+        ),
       body: 
         Column(
           children: [
@@ -63,23 +76,10 @@ class UserProfile extends StatelessWidget {
               height: 40,
               child: Center(
                 child: Text(
-                  "Tharusha Kulasinghe",
-                  style: TextStyle(
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: double.infinity,
-              height: 40,
-              child: Center(
-                child: Text(
                   "Student",
                   style: TextStyle(
                     fontSize: 21,
-                    fontWeight: FontWeight.w300
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
