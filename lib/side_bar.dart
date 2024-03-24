@@ -125,4 +125,24 @@ class SideBar extends StatelessWidget {
               );
             },
           ),
-         
+          ListTile(
+            leading: Icon(Icons.question_mark_outlined), 
+            title: Text('Note Book'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NoteBook()),
+              );  
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person), 
+            title: Text('Profile'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UserProfile()),
+              );   // You can use Navigator to push to the desired page
+            },
+          ),
+          
