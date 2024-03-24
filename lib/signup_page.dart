@@ -333,3 +333,24 @@ class _SignupState extends State<Signup> {
                             MaterialPageRoute(builder: (context) => Login()),
                           );
                         },
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.red, // Change color to your preference
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
