@@ -78,4 +78,23 @@ class _LoginState extends State<Login> {
       }
     }
   }      
-  
+
+  @override
+  Widget build(BuildContext context) {
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        width: 2.0,
+        style: BorderStyle.solid,
+        color: Colors.white,
+      ),
+      borderRadius: BorderRadius.circular(15),
+    );
+
+    return MaterialApp(
+         debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const Padding(  
