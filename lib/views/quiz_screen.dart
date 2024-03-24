@@ -168,3 +168,151 @@ class _QuizScreenState extends State<QuizScreen> {
                       )
                     ],
                   ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Question $_questionNumber/${widget.questionlenght.length}",
+                            style: TextStyle(
+                                fontSize: 16, color: Colors.grey.shade500),
+                          ),
+                          Expanded(
+                            child: PageView.builder(
+                              controller: _controller,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: widget.questionlenght.length,
+                              onPageChanged: (value) {
+                                setState(() {
+                                  _questionNumber = value + 1;
+                                  isLocked = false;
+                                  _resetQuestionLocks();
+                                });
+                              },
+                              itemBuilder: (context, index) {
+                                final myquestions =
+                                    widget.questionlenght[index];
+                                var optionsIndex = widget.optionsList[index];
+
+                                return Column(
+                                  children: [
+                                    Text(
+                                      myquestions.text,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .copyWith(
+                                            fontSize: 18,
+                                          ),
+                                    ),
+                                    const SizedBox(
+                                      height: 25,
+                                    ),
+                                    Expanded(
+                                      child: ListView.builder(
+                                        itemCount: myquestions.options.length,
+                                        itemBuilder: (context, index) {
+                                          var color = Colors.grey.shade200;
+
+                                          var questionOption =
+                                              myquestions.options[index];
+                                          final letters = optionsLetters[index];
+
+                                          if (myquestions.isLocked) {
+                                            if (questionOption ==
+                                                myquestions
+                                                    .selectedWiidgetOption) {
+                                              color = questionOption.isCorrect
+                                                  ? Colors.green
+                                                  : Colors.red;
+                                            } else if (questionOption
+                                                .isCorrect) {
+                                              color = Colors.green;
+                                            }
+                                          }
+                                          return InkWell(
+                                            onTap: () {
+                                              print(optionsIndex);
+                                              stopTime();
+                                              if (!myquestions.isLocked) {
+                                                setState(() {
+                                                  myquestions.isLocked = true;
+                                                  myquestions
+                                                          .selectedWiidgetOption =
+                                                      questionOption;
+                                                });
+
+                                                isLocked = myquestions.isLocked;
+                                                if (myquestions
+                                                    .selectedWiidgetOption
+                                                    .isCorrect) {
+                                                  score++;
+                                                }
+                                              }
+                                            },
+                                            child: Container(
+                                              height: 60,
+                                              padding: const EdgeInsets.all(10),
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 16),
+                                              decoration: BoxDecoration(
+                                                border:
+                                                    Border.all(color: color),
+                                                color: Colors.grey.shade100,
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(10)),
+                                              ),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "$letters ${questionOption.text}",
+                                                    style: const TextStyle(
+                                                        fontSize: 11),
+                                                  ),
+                                                  isLocked == true
+                                                      ? questionOption.isCorrect
+                                                          ? const Icon(
+                                                              Icons
+                                                                  .check_circle,
+                                                              color:
+                                                                  Colors.green,
+                                                            )
+                                                          : const Icon(
+                                                              Icons.cancel,
+                                                              color: Colors.red,
+                                                            )
+                                                      : const SizedBox.shrink()
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ),
+                          isLocked
+                              ? buildElevatedButton()
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
