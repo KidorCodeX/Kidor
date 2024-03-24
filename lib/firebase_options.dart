@@ -53,5 +53,19 @@ class DefaultFirebaseOptions {
     measurementId: 'G-BVK1VKJE1X',
   );
 
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyAgjbpl6uO0KCLZhoEL0zPRP_CCFsVT29Y',
+    appId: '1:908346899981:android:f4b8b75c82a6742388df44',
+    messagingSenderId: '908346899981',
+    projectId: 'kidor-8fdec',
+    storageBucket: 'kidor-8fdec.appspot.com',
+  );
 
-
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA8RAd-By-VqsByozEC81c9QJrc1edtCHY',
+    appId: '1:908346899981:ios:12e9ad9d9aeda4bd88df44',
+    messagingSenderId: '908346899981',
+    projectId: 'kidor-8fdec',
+    storageBucket: 'kidor-8fdec.appspot.com',
+    iosBundleId: 'com.example.myFirstApp',
+  );
