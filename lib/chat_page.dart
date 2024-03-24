@@ -37,3 +37,30 @@ class _ChatPageState extends State<ChatPage> {
   List<ChatMessage> _messages = <ChatMessage>[];
   String messageText = "";
   List<ChatUser> _typingUsers = <ChatUser>[];
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(213, 202, 255, 1),
+        title: const Text(
+          'generate',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: DashChat(
+        currentUser: _currentUser,
+        typingUsers: _typingUsers,
+        messageOptions: const MessageOptions(
+          currentUserContainerColor: Colors.black,
+          containerColor: Color.fromRGBO(213, 202, 255, 1),
+          textColor: Colors.black,
+        ),
+        onSend: (ChatMessage m) {
+          getChatResponse(m);
+        },
+        messages: _messages,
+      ),
+    );
+  }
