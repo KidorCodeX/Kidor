@@ -48,3 +48,53 @@ class HomePage extends StatelessWidget {
                     color: Colors.white,
                     margin: const EdgeInsets.all(10),
                     child: Column(
+                      children: [
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(0.0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Container(
+                                    width: 252,
+                                    height: 135,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.white),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Animate(
+                                          effects: [
+                                            FadeEffect(delay: 500.ms),
+                                            const SlideEffect(),
+                                          ],
+                                          child: const Text(
+                                            'Welcome,',
+                                            style: TextStyle(
+                                              fontSize: 35,
+                                            ),
+                                          ),
+                                        ),
+                                        Animate(
+                                          effects: [
+                                            FadeEffect(delay: 500.ms),
+                                            const SlideEffect()
+                                          ],
+                                          child: Text(
+                                            '$username !',
+                                            style: const TextStyle(
+                                                fontSize: 27,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 17),
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.circle,
+                                                color: Colors.grey,
+                                              ),
+                                              SizedBox(width: 5),
