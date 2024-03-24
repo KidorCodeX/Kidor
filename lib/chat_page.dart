@@ -37,7 +37,8 @@ class _ChatPageState extends State<ChatPage> {
   List<ChatMessage> _messages = <ChatMessage>[];
   String messageText = "";
   List<ChatUser> _typingUsers = <ChatUser>[];
-@override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -85,6 +86,7 @@ class _ChatPageState extends State<ChatPage> {
       await DBHelper.insertMCQ(messageText, question, options, answer);
     }
   }
+
   Future<void> getChatResponse(ChatMessage m) async {
     setState(() {
       _messages.insert(0, m);
@@ -121,3 +123,68 @@ follow this format
       }
     }).toList();
 
+    final request = ChatCompleteText(
+      model: GptTurbo0301ChatModel(),
+      messages: _messagesHistory,
+      maxToken: 400,
+    );
+
+    final response = await _openAI.onChatCompletion(request: request);
+
+    print('response message :  $response');
+
+    for (var element in response!.choices) {
+      if (element.message != null) {
+        setState(() {
+          final messageContent = element.message!.content;
+
+          print('messageContent message :  $messageContent');
+
+          try {
+            // Attempt parsing the message as JSON
+            final jsonContent = jsonDecode(messageContent);
+            // If parsing succeeds, it's JSON-formatted, print it
+            print('JSON Message: $jsonContent');
+
+            saveMCQToLocalDB(messageContent);
+
+            // Insert the message to the chat if required
+            _messages.insert(
+              0,
+              ChatMessage(
+                user: _gptChatUser,
+                createdAt: DateTime.now(),
+                text: "MCQ's for ${m.text} has been genarated ",
+              ),
+            );
+          } catch (e) {
+            // If parsing fails, it's not JSON, treat it as a string
+            print('Not Valid JSON: $messageContent');
+            // Insert a message indicating it's not valid
+            _messages.insert(
+              0,
+              ChatMessage(
+                user: _gptChatUser,
+                createdAt: DateTime.now(),
+                text: "Not valid.",
+              ),
+            );
+          }
+        });
+      }
+    }
+
+    setState(() {
+      _messages.insert(
+        0,
+        ChatMessage(
+          user: _gptChatUser,
+          createdAt: DateTime.now(),
+          text: "Please go to 'previoulsy' section ",
+        ),
+      );
+
+      _typingUsers.remove(_gptChatUser);
+    });
+  }
+}
