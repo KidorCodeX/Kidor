@@ -64,4 +64,38 @@ class SciencePage extends StatelessWidget {
     );
   }
 
+  Future<void> _launchUrl() async {
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
+  }
+  }
+  Future<void> _launchUrl1() async {
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
+  }
+  }
+  Future<void> _launchUrl2() async {
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url1');
+  }
+  }
+}
+
+
+class LessonCard extends StatelessWidget {
+  final String lessonImagePath;
+  final String heading;
+  final String paragraph;
+  final String gameButtonImagePath; 
+  final VoidCallback onTap; 
+
+  const LessonCard({
+    Key? key,
+    required this.lessonImagePath,
+    required this.heading,
+    required this.paragraph,
+    required this.gameButtonImagePath,
+    required this.onTap,
+  }) : super(key: key);
+
   
