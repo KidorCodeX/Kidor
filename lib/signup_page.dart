@@ -54,3 +54,14 @@ class _SignupState extends State<Signup> {
     // Add more complex password validation if needed
     return null;
   }
+
+  @override
+  Widget build(BuildContext context) {
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        width: 2.0,
+        style: BorderStyle.solid,
+        color: Colors.white,
+      ),
+      borderRadius: BorderRadius.circular(15),
+    );
