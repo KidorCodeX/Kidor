@@ -64,6 +64,7 @@ class FirebaseAuthMethods{
   }
 }
 
+//snack bar
 void showSnackBar(BuildContext context, String text){
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
