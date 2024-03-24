@@ -30,4 +30,20 @@ class NoteView extends StatelessWidget {
                           onNoteDeleted(index);
                           Navigator.of(context).pop();
                         }, 
-                        
+                         child: const Text("DELETE"),
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        }, 
+                        child: const Text("CANCEL"),
+                      )
+                    ],
+                  );
+                }
+              );
+            }, 
+            icon: Icon(Icons.delete),
+          ),
+        ],
+      ),
