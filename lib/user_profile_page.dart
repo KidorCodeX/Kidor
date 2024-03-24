@@ -344,3 +344,53 @@ class UserProfile extends StatelessWidget {
                                 ),
                               ),
                               ),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8),
+                                child: SizedBox(
+                                  width: 91,
+                                  height: 95,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "20%",
+                                        style: 
+                                        TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold
+                                        )
+                                      ),
+                                      Text(
+                                        "Quizzes",
+                                        style: 
+                                        TextStyle(
+                                          fontSize: 15
+                                        )
+                                      ),
+                                      
+                                      
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                     ),
+                    
+                  ],
+                ),
+              )
+            ),
+
+          ],
+        )
+      
+      
+      
+
+
+    );
+    
+  }
+}
