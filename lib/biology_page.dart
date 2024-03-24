@@ -33,4 +33,29 @@ class BiologyPage extends StatelessWidget {
                 borderRadius:
                     BorderRadius.only(bottomRight: Radius.circular(150))),
           ),
-          
+          LessonCard(
+            lessonImagePath: "assets/biologyPage/heartL.png",
+              heading: "Heart",
+              paragraph: "Explore the heart, its anatomy, functions, and significance. ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:
+              _launchUrl,
+          ),
+          LessonCard(
+            lessonImagePath: "assets/biologyPage/brainL.png",
+              heading: "Brain",
+              paragraph: "Discover the brain, exploring its structure. ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:_launchUrl1,
+          ),
+          LessonCard(
+            lessonImagePath: "assets/biologyPage/animalCell.png",
+              heading: "AnimalCell",
+              paragraph: "Learn the structure of the smallest unit in animals ",
+              gameButtonImagePath: "assets/gameButton.png",
+            onTap:_launchUrl2,
+          ),
+        ],
+      )),
+    );
+  }
