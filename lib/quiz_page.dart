@@ -63,3 +63,23 @@ class QuizPage extends StatelessWidget {
                                   image: AssetImage(
                                       "assets/quizPage/quizBarPic.png"),
                                   fit: BoxFit.fill,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(2.0),
+                                  child: SizedBox(
+                                    width: 200,
+                                    height: 30,
+                                    //color: Colors.black,
+                                    child: Text(
+                                      'Quiz | Revise',
