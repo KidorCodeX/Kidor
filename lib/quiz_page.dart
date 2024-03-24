@@ -157,4 +157,24 @@ class QuizPage extends StatelessWidget {
                             size: 35,
                           ),
                         ],
-                      ),                          
+                      ), 
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ChatPage()),
+                    );
+                    print("working ");
+                  },
+                  child: SizedBox(
+                    width: 350,
+                    height: 137,
+                    child: Material(
+                      elevation: 4,
+                      borderRadius: BorderRadius.circular(15),
+                      child: Row(
+                        children: [
+                          Padding(                         
