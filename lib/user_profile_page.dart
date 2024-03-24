@@ -233,3 +233,77 @@ class UserProfile extends StatelessWidget {
                 ),
               )
             ),
+            SizedBox(
+              width: double.infinity,
+              height: 120,
+              //color: Colors.blue,
+              child: Center(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Container(
+                        width: 166,
+                        height: 87,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: const BorderRadius.all(Radius.circular(10)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5), 
+                              spreadRadius: 5, 
+                              blurRadius: 7, 
+                              offset: const Offset(0, 3), 
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(13.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: ShapeDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage("assets/Progress.png"),
+                                  fit: BoxFit.fill,
+                                  ),
+                                
+                                  shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 8),
+                                child: SizedBox(
+                                  width: 91,
+                                  height: 95,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "30%",
+                                        style: 
+                                        TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold
+                                        )
+                                      ),
+                                      Text(
+                                        "Progress",
+                                        style: 
+                                        TextStyle(
+                                          fontSize: 15
+                                        )
+                                      ),
+                                      
+                                      
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
