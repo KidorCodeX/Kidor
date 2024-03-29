@@ -1,4 +1,4 @@
-# my_first_app
+# Kidor
 
 A new Flutter project.
 
