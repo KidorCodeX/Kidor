@@ -27,6 +27,8 @@ class _SignupState extends State<Signup> {
     passwordController.dispose();
   }
 
+
+  // Method to sign up user using provided email and password
   void signUpUser(BuildContext scaffoldContext) async {
   FirebaseAuthMethods authMethods = FirebaseAuthMethods(FirebaseAuth.instance);
   await authMethods.signUpWithEmail(
@@ -39,7 +41,7 @@ class _SignupState extends State<Signup> {
     if (value == null || value.isEmpty) {
       return 'Email address is required';
     }
-    // Add more complex email validation if needed
+ 
     return null;
   }
 
@@ -47,7 +49,7 @@ class _SignupState extends State<Signup> {
     if (value == null || value.isEmpty) {
       return 'Password is required';
     }
-    // Add more complex password validation if needed
+   
     return null;
   }
 
